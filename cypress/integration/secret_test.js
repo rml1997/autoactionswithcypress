@@ -1,7 +1,5 @@
 describe('Secret test', function() {
   it('Checks secrets are accessible', function() {
-    
-    console.log('Secret = ' + Cypress.env('test_secret'))
-    
+    expect(cy.env('test_secret')).to.equal('Test')
   })
 })
