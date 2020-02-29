@@ -1,0 +1,15 @@
+{
+  "name": "autoactionswithcypress",
+  "version": "1.0.0",
+  "description": "Login to websites daily",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "cypress": "4.0.2"
+  }
+}
