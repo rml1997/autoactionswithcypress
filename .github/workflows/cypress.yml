@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cypress run
         env:
           kong_user: ${{ secrets.kong_user }}
           kong_pass: ${{ secrets.kong_pass }}
           epic_email: ${{ secrets.epic_email }}
           epic_pass: ${{ secrets.epic_pass }}
-        uses: actions/checkout@v1
-      - name: Cypress run
         uses: cypress-io/github-action@v1
