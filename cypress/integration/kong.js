@@ -4,13 +4,13 @@ describe('Kongregate BOTD getter', function() {
     cy.visit('https://kongregate.com/badges')
     
     cy.get('#welcome_username')
-      .type(Cypress.env('kong_user'))
+      .type(Cypress.env('kong_user'),{force: true})
     
     cy.get('#welcome_password')
-      .type(Cypress.env('kong_pass'))
+      .type(Cypress.env('kong_pass'),{force: true})
     
     cy.get('#welcome_box_sign_in_button')
-      .click()
+      .click({force: true})
     
     let link = cy.get('.badge_link .click_link').href
     
