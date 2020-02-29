@@ -11,18 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Hello world
-        run: echo Hello world $FIRST_NAME $middle_name $Last_Name! $test_secret
+      - name: Test secret env variables
+        run: echo $test_secret
         env:
-          FIRST_NAME: Mona
-          middle_name: The
-          Last_Name: Octocat
           test_secret: ${{ secrets.test_secret }}
       - name: Cypress run
+        uses: cypress-io/github-action@v1
         env:
           kong_user: ${{ secrets.kong_user }}
           kong_pass: ${{ secrets.kong_pass }}
           epic_email: ${{ secrets.epic_email }}
           epic_pass: ${{ secrets.epic_pass }}
           test_secret: ${{ secrets.test_secret }}
-        uses: cypress-io/github-action@v1
+        
