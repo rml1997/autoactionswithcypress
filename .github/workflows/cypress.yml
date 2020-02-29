@@ -19,3 +19,11 @@ jobs:
           epic_pass: ${{ secrets.epic_pass }}
           test_secret: ${{ secrets.test_secret }}
         uses: cypress-io/github-action@v1
+    steps:
+    - name: Hello world
+      run: echo Hello world $FIRST_NAME $middle_name $Last_Name! $test_secret
+      env:
+        FIRST_NAME: Mona
+        middle_name: The
+        Last_Name: Octocat
+        test_secret: ${{ secrets.test_secret }}
