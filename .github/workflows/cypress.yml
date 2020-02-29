@@ -20,5 +20,5 @@ jobs:
         uses: cypress-io/github-action@v1
       - name: Test secrets
         env:
-          test_secret: ${{test_sercret}}
+          test_secret: ${{ secrets.test_sercret }}
         run: echo test_secret
