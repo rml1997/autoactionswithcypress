@@ -12,7 +12,7 @@ describe('Kongregate BOTD getter', function() {
     cy.get('#welcome_box_sign_in_button')
       .click({force: true})
     
-    cy.get('.botd_title > strong > a').its('href')
+    cy.get('.botd_title > strong > a').invoke('attr', 'href')
       .then(link => cy.visit( link + '/chat_achievements'))
   })
 })
