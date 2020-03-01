@@ -14,5 +14,7 @@ describe('Kongregate BOTD getter', function() {
     
     cy.get('#sessions_new_form_spinner')
       .click({force: true})
+    
+    cy.wait(100)
   })
 })
