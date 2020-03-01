@@ -17,10 +17,14 @@ jobs:
           test_secret: ${{ secrets.test_secret }}
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        with:
+          record: true
         env:
           cypress_kong_user: ${{ secrets.kong_user }}
           cypress_kong_pass: ${{ secrets.kong_pass }}
           cypress_epic_email: ${{ secrets.epic_email }}
           cypress_epic_pass: ${{ secrets.epic_pass }}
           cypress_test_secret: ${{ secrets.test_secret }}
+          CYPRESS_RECORD_KEY: ${{ secrets.cypress_record_key }}
+          CYPRESS_PROJECT_ID: ${{ secrets.cypress_project_id }}
         
