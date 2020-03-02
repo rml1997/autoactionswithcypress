@@ -2,6 +2,9 @@ name: Access sites
 on:
   schedule:
     - cron: '1 8 * * *'
+  push:	
+    branches:	
+      - master
 jobs:
   cypress-run:
     runs-on: ubuntu-16.04
