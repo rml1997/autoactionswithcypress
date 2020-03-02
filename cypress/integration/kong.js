@@ -17,6 +17,8 @@ describe('Kongregate BOTD getter', function() {
 
     cy.contains('accomplishments_tab_pane')
     
+    cy.on('uncaught:exception', (err, runnable) => {return false})
+    
     cy.visit('https://kongregate.com/kongpanions')
     cy.get('.day .today').contains('.day_earned')
 
