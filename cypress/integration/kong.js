@@ -15,6 +15,8 @@ describe('Kongregate BOTD getter', function() {
     cy.get('#sessions_new_form_spinner')
       .click({force: true})
     
-    cy.wait(100)
+    cy.visit('https://kongregate.com/kongpanions')
+    cy.get('.day .today').contains('.day_earned')
+
   })
 })
