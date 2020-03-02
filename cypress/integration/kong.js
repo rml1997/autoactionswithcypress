@@ -5,10 +5,6 @@ describe('Kongregate BOTD getter', function() {
     
     cy.get('.botd_title > strong > a').invoke('attr', 'href')
       .then(link => cy.visit( link + '/chat_achievements'))
-
-    cy.server()
-    
-    cy.route('*/chat_achievements').as('achievement')
     
     cy.get('#username')
       .type(Cypress.env('kong_user'),{force: true})
@@ -19,7 +15,7 @@ describe('Kongregate BOTD getter', function() {
     cy.get('#sessions_new_form_spinner')
       .click({force: true})
 
-    cy.wait('@achievement')
+    cy.contains('accomplishments_tab_pane')
     
     cy.visit('https://kongregate.com/kongpanions')
     cy.get('.day .today').contains('.day_earned')
