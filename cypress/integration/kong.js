@@ -20,7 +20,7 @@ describe('Kongregate BOTD getter', function() {
     cy.on('uncaught:exception', (err, runnable) => {return false})
     
     cy.visit('https://kongregate.com/kongpanions')
-    cy.get('.day .today').contains('.day_earned')
+    cy.get('.day.today').contains('.day_earned')
 
   })
 })
